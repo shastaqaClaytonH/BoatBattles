@@ -1,11 +1,14 @@
 <?php
 
+$width = 40;
+$height = 40;
+
 function printMap($map) {
 	echo "<table>";
-	for ($i = 0; $i < 128; $i++) {
-		echo "<tr>";
-		for ($j = 0; $j < 128; $j++) {
-			echo "<td>" . $map[$i][$j] . "</td>";
+	for ($i = 0; $i < $height; $i++) {
+		echo "<tr id='" . $i . "'>";
+		for ($j = 0; $j < $width; $j++) {
+			echo "<td id='" . $j . "'>" . $map[$i][$j] . "</td>";
 		}
 		echo "</tr>";
 	}
@@ -13,8 +16,6 @@ function printMap($map) {
 }
 
 function createMap() {
-	$width = 128;
-	$height = 128;
 	for ($i = 0; $i < $height; $i++) {
 		for ($j = 0; $j < $width; $j++) {
 			$spot = "Null";
