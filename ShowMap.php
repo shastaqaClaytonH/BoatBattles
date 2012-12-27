@@ -27,4 +27,7 @@ function createMap() {
 	}
 	return $map;
 }
+
+$watermap=createMap();
+
 ?>
