@@ -2,10 +2,10 @@
 
 function printMap($map) {
 	echo "<table>";
-	for ($i = 0; $i < count($map); $i++) {
+	for ($i = 0; $i < 128; $i++) {
 		echo "<tr>";
-		for ($j = 0; $j < count($map[i]); $j++) {
-			echo "<td>" + $map[i][j] + "</td>";
+		for ($j = 0; $j < 128; $j++) {
+			echo "<td>" . $map[$i][$j] . "</td>";
 		}
 		echo "</tr>";
 	}
@@ -19,15 +19,27 @@ function createMap() {
 		for ($j = 0; $j < $width; $j++) {
 			$spot = "Null";
 			if ($spot == "L") {
-				$map[i][j] = "L";
+				$map[$i][$j] = "L";
 			} else {
-				$map[i][j] = "W";
+				$map[$i][$j] = "W";
 			}
 		}
 	}
 	return $map;
 }
 
-$watermap=createMap();
-
+$watermap = createMap();
 ?>
+
+<html>
+    <head>
+        <title> Boat Battles Map </title>
+    </head>
+    <body>
+        <div id="left"></div>
+        <div id="Main">
+            <?php printMap($watermap); ?>
+        </div>
+        <div id="footer"></div>
+    </body>
+</html>
